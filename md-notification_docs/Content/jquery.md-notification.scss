@@ -1,5 +1,12 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 
+@media (max-width:512px){
+    .md-notification-container {
+        top:3px;
+    }
+}
+
+
 material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
