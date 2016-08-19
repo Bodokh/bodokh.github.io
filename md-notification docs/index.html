@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link href="Content/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="Content/jquery.md-notification.min.css" rel="stylesheet" />
+    <link href="Content/demo.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo left">md-notification</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="bold-cont">
+        <div class="container">
+            <h1>Give life to your web app with Material Design Notifications!</h1>
+        </div>
+    </div>
+    <div class="container">
+        <h2>OVERVIEW</h2>
+        <hr />
+        <div class="help-block help-blue">
+            <h4>Plugin dependencies</h4>
+            <p>
+                This plugin requires the md-notifications CSS file and jQuery (1.1.14+) to function. (this means jQuery must be included before the plugin file).
+            </p>
+        </div>
+        <div id="BarryNotification" class="md-notification-container top">
+            <a class="md-notification-close" data-dismiss="md-notification"><i class="material-icons">close</i></a>
+            <div class="md-img-container">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/a2fa0522433737.5631e82d148c9.png" />
+            </div>
+            <div class="md-notification-content">
+                <p class="md-notification-time">4:53 PM</p>
+                <h3>Barry Allen</h3>
+                <h4>Wanna know my secret identity?</h4>
+                <p>I am the flash!</p>
+                <div class="md-notification-options">
+                    <div class="md-notification-option">
+                        <a href="#"><i class="material-icons">archive</i> ARCHIVE</a>
+                    </div>
+                    <div class="md-notification-option">
+                        <a href="#"><i class="material-icons">reply</i> REPLY</a>
+                    </div>
+                </div>
+                <p>FlashGordon@gmail.com</p>
+            </div>
+        </div>
+        <h2>USAGE</h2>
+        <hr />
+        <div class="help-block help-teal">
+            <h4>Live example</h4>
+            <p>
+                Dynamically generate notifications.
+                <br />Blank values will be emitted from the passed parameters.
+            </p>
+        </div>
+        <div class="row">
+            <form id="frmMD" class="col s12" method="post">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input name="header" id="header" type="text">
+                        <label for="header">header</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input name="subHeader" id="subHeader" type="text">
+                        <label for="subHeader">subHeader</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input name="footer" id="footer" type="text">
+                        <label for="footer">footer</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input name="imgUrl" id="imgUrl" type="text">
+                        <label for="imgUrl">imgUrl</label>
+                    </div>
+                    <div class="col s6">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea name="body" id="body_cont" class="materialize-textarea"></textarea>
+                                <label for="body_cont">body</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <p>
+                            <input name="timeStamp" type="checkbox" class="filled-in" id="timeStamp" />
+                            <label for="timeStamp">timeStamp</label>
+                        </p><br />
+                        <p>
+                            <input name="progressBar" type="checkbox" class="filled-in" id="progressBar" />
+                            <label for="progressBar">progressBar</label>
+                        </p>
+                    </div>
+                    <div class="col s3">
+                        <p>
+                            <input name="dismiss" type="checkbox" class="filled-in" id="dismiss" />
+                            <label for="dismiss">dismiss</label>
+                        </p>
+                    </div>
+                    <div class="input-field col s12">
+                        <input name="timeOut" id="timeOut" type="number">
+                        <label for="timeOut">timeOut (milliseconds)</label>
+                    </div>
+                    <div class="col s12">
+                        <button type="submit" class="waves-effect waves-light btn indigo wave-indigo" id="CreateOnTheFly">Generate</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr />
+        <div class="help-block help-teal">
+            <h4>Custom HTML</h4>
+            <p>
+                Use your own HTML to futher customize your notification as well as button actions.
+                <br />Once the notification is triggered, the HTML will be deleted upon being closed.
+            </p>
+        </div>
+        <button class="waves-effect waves-light btn indigo wave-indigo" onclick="ToggleThis();">Show Custom Notification</button>
+        <p class="help-text">You will only be abel to show the notification once, for it will be deleted when closed.</p>
+<pre><code class="language-markup">&lt;div id=&quot;BarryNotification&quot; class=&quot;md-notification-container top&quot;&gt;
+    &lt;a class=&quot;md-notification-close&quot; data-dismiss=&quot;md-notification&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;close&lt;/i&gt;&lt;/a&gt;
+    &lt;div class=&quot;md-img-container&quot;&gt;
+        &lt;img src=&quot;https://mir-s3-cdn-cf.behance.net/project_modules/disp/a2fa0522433737.5631e82d148c9.png&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;md-notification-content&quot;&gt;
+        &lt;p class=&quot;md-notification-time&quot;&gt;4:53 PM&lt;/p&gt;
+        &lt;h3&gt;Barry Allen&lt;/h3&gt;
+        &lt;h4&gt;Wanna know my secret identity?&lt;/h4&gt;
+        &lt;p&gt;I am the flash!&lt;/p&gt;
+        &lt;div class=&quot;md-notification-options&quot;&gt;
+            &lt;div class=&quot;md-notification-option&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;archive&lt;/i&gt; ARCHIVE&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;md-notification-option&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;reply&lt;/i&gt; REPLY&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;p&gt;FlashGordon@gmail.com&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        <p><strong>jQuery</strong> button click event</p>
+<pre><code class="language-javascript"><pre>$("#BarryNotification").mdNotify("show", 5000);</pre></code></pre>
+        <hr />
+
+        <div class="help-block help-teal">
+            <h4>Bind to element click</h4>
+            <p>
+                To bind a notification to a click event, simply initialize the plugin on the selector element.
+            </p>
+        </div>
+        <button class="waves-effect waves-light btn indigo wave-indigo" id="button_Trigger_Notification">Trigger Button</button>
+<pre><code class="language-javascript"><pre>$("#button_Trigger_Notification").mdNotify(options);</pre></code></pre>
+        <hr />
+        <div class="help-block help-teal">
+            <h4>Generate on the fly</h4>
+            <p>
+                To generate the notification on the fly, simply use the body as the selector.<br />
+            </p>
+        </div>
+        <button class="waves-effect waves-light btn indigo wave-indigo" onclick="GenerateNotification();">Genereate Notification</button>
+        <pre><code class="language-markup"><pre>&lt;button onclick=&quot;GenerateNotification();&quot;&gt;Genereate Notification&lt;/button&gt;</pre></code></pre>
+        <pre><code class="language-javascript"><pre>function GenerateNotification() {
+    $("body").mdNotify(options);
+}</pre></code></pre>
+        <hr />
+        <h2>OPTIONS</h2>
+        <hr />
+        <p class="help-text">Paramater options table</p>
+        <table class="bordered striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Defaults</th>
+                    <th>Description</th>
+                    <th>Example Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>header</td>
+                    <td>string</td>
+                    <td>""</td>
+                    <td>Header</td>
+                    <td>"text"</td>
+                </tr>
+                <tr>
+                    <td>subHeader</td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>Sub header</td>
+                    <td>"text"</td>
+                </tr>
+                <tr>
+                    <td>body</td>
+                    <td>string</td>
+                    <td>""</td>
+                    <td>Body Content</td>
+                    <td>"text"</td>
+                </tr>
+                <tr>
+                    <td>footer</td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>Footer content</td>
+                    <td>"text"</td>
+                </tr>
+                <tr>
+                    <td>actions</td>
+                    <td>
+                        action[]
+                    </td>
+                    <td>null</td>
+                    <td>An array of actions to display on the notifications</td>
+                    <td>
+                        [{ name: "ARCHIVE", mdIcon: "archive", link: "#" }, { name: "REPLY", mdIcon: "reply", link: "#" }]
+                    </td>
+                </tr>
+                <tr>
+                    <td>timeStamp</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Wether to display a time stamp</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>customTimeStamp</td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>If the <strong>timeStamp</strong> is true, the current time will be shown, if <strong>customTimeStamp</strong> contains a value other than null, it will be displayed instead</td>
+                    <td>"14:15:40 custom text"</td>
+                </tr>
+                <tr>
+                    <td>dismiss</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Wether to show a close option</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>progressBar</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>Wether to display in a fashionly manner the time remaining for the notification until it closes</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>imgUrl</td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>Image URL for the notification</td>
+                    <td>"resources/mdAvatar.png"</td>
+                </tr>
+                <tr>
+                    <td>timeOut</td>
+                    <td>int</td>
+                    <td>5000</td>
+                    <td>How long will the message be displayed in milliseconds</td>
+                    <td>2500</td>
+                </tr>
+                <tr>
+                    <td>position</td>
+                    <td>string</td>
+                    <td>"top"</td>
+                    <td>
+                        Determines the position of the notification<br />
+                        Options: ["top", "bottom", "left", "right", "top-right", "top-left", "bottom-left", "bottom-right"]
+                    </td>
+                    <td>"top-right"</td>
+                </tr>
+                <tr>
+                    <td>show</td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Wether to show the notification upon creation</td>
+                    <td>true</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class="page-footer indigo">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">md-notification</h5>
+                    <p class="grey-text text-lighten-4">v0.1a</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-github"></i> GitHub</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/Eran.Bodokh"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/eran-bodokh-3bb33b3a"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a class="grey-text text-lighten-3" href="mailto:bodokhp@gmail.com"><i class="fa fa-envelope"></i> Bodokhp@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2016 Eran Bodokh
+                <a class="grey-text text-lighten-4 right" target="_blank" href="http://wefix.cf">WEFIX</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="scripts/jquery.md-notification.js"></script>
+    <script src="scripts/prism.js"></script>
+    <script>
+        Prism.highlightAll();
+        $("#frmMD").on("submit", function (ev) {
+            ev.preventDefault();
+            var opt = $(this).serializeArray();
+            var newOpt = {};
+            $.each(opt, function (i, item) {
+                if (item.value != "")
+                    newOpt[item.name] = item.value;
+            });
+            $("body").mdNotify(newOpt);
+        });
+    </script>
+    <script>
+        function ToggleThis() {
+            $("#BarryNotification").mdNotify("show", 5000);
+        }
+        $("#button_Trigger_Notification").mdNotify({
+            header: "This is a binded event",
+            imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/a2fa0522433737.5631e82d148c9.png",
+            subHeader: "you know it",
+            body: "body content",
+            timeStamp: true,
+            timeOut: 5000,
+            show: true,
+            position: "top",
+            dismiss: false,
+            actions: [{ name: "ARCHIVE", mdIcon: "archive", link: "#" }, { name: "REPLY", mdIcon: "reply", link: "#" }],
+            footer: "FlashGordon@gmail.com"
+        });
+
+        function GenerateNotification() {
+            $("body").mdNotify({
+                header: "This is a generated notification",
+                imgUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/a2fa0522433737.5631e82d148c9.png",
+                subHeader: "Indeed it is",
+                body: "body content goes here",
+                timeStamp: true,
+                timeOut: 3000,
+                position: "top",
+                dismiss: false,
+                actions: [{ name: "ARCHIVE", mdIcon: "archive", link: "#" }, { name: "REPLY", mdIcon: "reply", link: "#" }],
+                footer: "FlashGordon@gmail.com",
+            });
+        }
+
+    </script>
+</body>
+</html>
