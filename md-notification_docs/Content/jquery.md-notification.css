@@ -35,7 +35,7 @@ material-icons {
   background-color: #F9F9F9;
   position: fixed;
   margin: auto;
-  width: 512px;
+  max-width: 512px;
   border-radius: 3px;
   display: flex;
   flex-wrap: nowrap;

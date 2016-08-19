@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <link href="Content/jquery.md-notification.min.css" rel="stylesheet" />
     <link href="Content/demo.min.css" rel="stylesheet" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0  />
     <meta name="description" content="Give life to your web app with Material Design Notifications!">
 
 </head>
@@ -19,8 +19,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo left">md-notification</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
             </div>
         </div>
     </nav>
@@ -71,25 +70,25 @@
         <div class="row">
             <form id="frmMD" class="col s12" method="post">
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col m6 s12">
                         <input name="header" id="header" type="text">
                         <label for="header">header</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col m6 s12">
                         <input name="subHeader" id="subHeader" type="text">
                         <label for="subHeader">subHeader</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col m6 s12">
                         <input name="footer" id="footer" type="text">
                         <label for="footer">footer</label>
                     </div>
-                    <div class="input-field col s6">
+                    <div class="input-field col m6 s12">
                         <input name="imgUrl" id="imgUrl" type="text">
                         <label for="imgUrl">imgUrl</label>
                     </div>
-                    <div class="col s6">
+                    <div class="col m6 s12">
                         <div class="row">
                             <div class="input-field col s12">
                                 <textarea name="body" id="body_cont" class="materialize-textarea"></textarea>
@@ -97,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col s3">
+                    <div class="col m3 s6">
                         <p>
                             <input name="timeStamp" type="checkbox" class="filled-in" id="timeStamp" />
                             <label for="timeStamp">timeStamp</label>
@@ -107,7 +106,7 @@
                             <label for="progressBar">progressBar</label>
                         </p>
                     </div>
-                    <div class="col s3">
+                    <div class="col m3 s6">
                         <p>
                             <input name="dismiss" type="checkbox" class="filled-in" id="dismiss" />
                             <label for="dismiss">dismiss</label>
@@ -182,117 +181,119 @@
         <h2>OPTIONS</h2>
         <hr />
         <p class="help-text">Paramater options table</p>
-        <table class="bordered striped">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Defaults</th>
-                    <th>Description</th>
-                    <th>Example Usage</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>header</td>
-                    <td>string</td>
-                    <td>""</td>
-                    <td>Header</td>
-                    <td>"text"</td>
-                </tr>
-                <tr>
-                    <td>subHeader</td>
-                    <td>string</td>
-                    <td>null</td>
-                    <td>Sub header</td>
-                    <td>"text"</td>
-                </tr>
-                <tr>
-                    <td>body</td>
-                    <td>string</td>
-                    <td>""</td>
-                    <td>Body Content</td>
-                    <td>"text"</td>
-                </tr>
-                <tr>
-                    <td>footer</td>
-                    <td>string</td>
-                    <td>null</td>
-                    <td>Footer content</td>
-                    <td>"text"</td>
-                </tr>
-                <tr>
-                    <td>actions</td>
-                    <td>
-                        action[]
-                    </td>
-                    <td>null</td>
-                    <td>An array of actions to display on the notifications</td>
-                    <td>
-                        [{ name: "ARCHIVE", mdIcon: "archive", link: "#" }, { name: "REPLY", mdIcon: "reply", link: "#" }]
-                    </td>
-                </tr>
-                <tr>
-                    <td>timeStamp</td>
-                    <td>boolean</td>
-                    <td>true</td>
-                    <td>Wether to display a time stamp</td>
-                    <td>true</td>
-                </tr>
-                <tr>
-                    <td>customTimeStamp</td>
-                    <td>string</td>
-                    <td>null</td>
-                    <td>If the <strong>timeStamp</strong> is true, the current time will be shown, if <strong>customTimeStamp</strong> contains a value other than null, it will be displayed instead</td>
-                    <td>"14:15:40 custom text"</td>
-                </tr>
-                <tr>
-                    <td>dismiss</td>
-                    <td>boolean</td>
-                    <td>false</td>
-                    <td>Wether to show a close option</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>progressBar</td>
-                    <td>boolean</td>
-                    <td>false</td>
-                    <td>Wether to display in a fashionly manner the time remaining for the notification until it closes</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>imgUrl</td>
-                    <td>string</td>
-                    <td>null</td>
-                    <td>Image URL for the notification</td>
-                    <td>"resources/mdAvatar.png"</td>
-                </tr>
-                <tr>
-                    <td>timeOut</td>
-                    <td>int</td>
-                    <td>5000</td>
-                    <td>How long will the message be displayed in milliseconds</td>
-                    <td>2500</td>
-                </tr>
-                <tr>
-                    <td>position</td>
-                    <td>string</td>
-                    <td>"top"</td>
-                    <td>
-                        Determines the position of the notification<br />
-                        Options: ["top", "bottom", "left", "right", "top-right", "top-left", "bottom-left", "bottom-right"]
-                    </td>
-                    <td>"top-right"</td>
-                </tr>
-                <tr>
-                    <td>show</td>
-                    <td>boolean</td>
-                    <td>true</td>
-                    <td>Wether to show the notification upon creation</td>
-                    <td>true</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="bordered striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Defaults</th>
+                        <th>Description</th>
+                        <th>Example Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>header</td>
+                        <td>string</td>
+                        <td>""</td>
+                        <td>Header</td>
+                        <td>"text"</td>
+                    </tr>
+                    <tr>
+                        <td>subHeader</td>
+                        <td>string</td>
+                        <td>null</td>
+                        <td>Sub header</td>
+                        <td>"text"</td>
+                    </tr>
+                    <tr>
+                        <td>body</td>
+                        <td>string</td>
+                        <td>""</td>
+                        <td>Body Content</td>
+                        <td>"text"</td>
+                    </tr>
+                    <tr>
+                        <td>footer</td>
+                        <td>string</td>
+                        <td>null</td>
+                        <td>Footer content</td>
+                        <td>"text"</td>
+                    </tr>
+                    <tr>
+                        <td>actions</td>
+                        <td>
+                            action[]
+                        </td>
+                        <td>null</td>
+                        <td>An array of actions to display on the notifications</td>
+                        <td>
+                            [{ name: "ARCHIVE", mdIcon: "archive", link: "#" }, { name: "REPLY", mdIcon: "reply", link: "#" }]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>timeStamp</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Wether to display a time stamp</td>
+                        <td>true</td>
+                    </tr>
+                    <tr>
+                        <td>customTimeStamp</td>
+                        <td>string</td>
+                        <td>null</td>
+                        <td>If the <strong>timeStamp</strong> is true, the current time will be shown, if <strong>customTimeStamp</strong> contains a value other than null, it will be displayed instead</td>
+                        <td>"14:15:40 custom text"</td>
+                    </tr>
+                    <tr>
+                        <td>dismiss</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>Wether to show a close option</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>progressBar</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>Wether to display in a fashionly manner the time remaining for the notification until it closes</td>
+                        <td>false</td>
+                    </tr>
+                    <tr>
+                        <td>imgUrl</td>
+                        <td>string</td>
+                        <td>null</td>
+                        <td>Image URL for the notification</td>
+                        <td>"resources/mdAvatar.png"</td>
+                    </tr>
+                    <tr>
+                        <td>timeOut</td>
+                        <td>int</td>
+                        <td>5000</td>
+                        <td>How long will the message be displayed in milliseconds</td>
+                        <td>2500</td>
+                    </tr>
+                    <tr>
+                        <td>position</td>
+                        <td>string</td>
+                        <td>"top"</td>
+                        <td>
+                            Determines the position of the notification<br />
+                            Options: ["top", "bottom", "left", "right", "top-right", "top-left", "bottom-left", "bottom-right"]
+                        </td>
+                        <td>"top-right"</td>
+                    </tr>
+                    <tr>
+                        <td>show</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Wether to show the notification upon creation</td>
+                        <td>true</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <footer class="page-footer indigo">
         <div class="container">
@@ -335,8 +336,6 @@
             });
             $("body").mdNotify(newOpt);
         });
-    </script>
-    <script>
         function ToggleThis() {
             $("#BarryNotification").mdNotify("show", 5000);
         }

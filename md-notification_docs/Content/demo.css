@@ -1,4 +1,8 @@
-﻿body {
+﻿@media (max-width: 768px) {
+  h1 {
+    font-size: 44px; } }
+
+body {
   background-color: #fafafa; }
 
 nav {
@@ -37,4 +41,8 @@ h2, h1, h3, h4, h5 {
 
 .help-text {
   color: #858384; }
+
+.table-responsive {
+  max-width: 100%;
+  overflow: auto; }
 
