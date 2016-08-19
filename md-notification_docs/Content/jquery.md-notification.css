@@ -1,6 +1,11 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 @media (max-width: 512px) {
   .md-notification-container {
+    left: 0 !important;
+    right: 0 !important;
+    transform-origin: center top !important;
+    -webkit-transform: scale(0) translate(0, -100px) !important;
+    transform: scale(0) translate(0, -100px) !important;
     top: 3px !important; } }
 
 material-icons {

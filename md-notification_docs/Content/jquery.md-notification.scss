@@ -1,8 +1,13 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 
-@media (max-width:512px){
+@media (max-width:512px) {
     .md-notification-container {
-        top:3px !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform-origin: center top !important;
+        -webkit-transform: scale(0) translate(0,-100px) !important;
+        transform: scale(0) translate(0,-100px) !important;
+        top: 3px !important;
     }
 }
 
@@ -38,22 +43,23 @@ material-icons {
     -webkit-transform: scale(0) translate(0,-100px);
     transform: scale(0) translate(0,-100px);
     transform-origin: center top;
-    .md-progress{
-        position:absolute;
-        bottom:0;
-        height:4px;
-        background-color:transparent;
-        width:0.1%;
-        left:0;
-        border-bottom-left-radius:3px;
-        border-bottom-right-radius:3px;
 
-        &.active{
-            width:100%;
-            background-color:#009688;
+    .md-progress {
+        position: absolute;
+        bottom: 0;
+        height: 4px;
+        background-color: transparent;
+        width: 0.1%;
+        left: 0;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+        &.active {
+            width: 100%;
+            background-color: #009688;
         }
-        
     }
+
     &.active {
         -webkit-transform: scale(1) translate(0,0) !important;
         transform: scale(1) translate(0,0) !important;
@@ -126,7 +132,8 @@ material-icons {
     h4 {
         font-size: 16px;
     }
-    z-index:9999;
+
+    z-index: 9999;
     box-shadow: 1px 1px 2px rgba(0,0,0,.4);
     padding: 12px;
     background-color: #F9F9F9;
