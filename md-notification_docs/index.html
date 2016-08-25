@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <link href="Content/jquery.md-notification.min.css" rel="stylesheet" />
     <link href="Content/demo.min.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0  />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta name="description" content="Give life to your web app with Material Design Notifications!">
 
 </head>
@@ -294,6 +294,35 @@
                 </tbody>
             </table>
         </div>
+        <hr />
+        <h2>METHODS</h2>
+        <hr />
+        <p class="highlight-indigo">$("body").mdNotify(options)</p>
+        <p class="help-text">Activates a notification immediately.</p>
+        <pre><code class="language-javascript"><pre>$("body").mdNotify({
+    header: "Header Text"
+});</pre></code></pre>
+        <br />
+        <p class="highlight-indigo">$("button").mdNotify(options)</p>
+        <p class="help-text">Binds a notification to a click event.</p>
+        <pre><code class="language-javascript"><pre>$("button").mdNotify({
+    header: "Header Text"
+});</pre></code></pre>
+
+        <br />
+        <p class="highlight-indigo">$("#notification").mdNotify("show")</p>
+        <p class="help-text">Shows an existing notification.</p>
+        <pre><code class="language-javascript"><pre>$("#notification").mdNotify("show");</pre></code></pre>
+
+        <br />
+        <p class="highlight-indigo">$("#notification").mdNotify("hide")</p>
+        <p class="help-text">Hides a visible notification.</p>
+        <pre><code class="language-javascript"><pre>$("#notification").mdNotify("hide");</pre></code></pre>
+
+        <br />
+        <p class="highlight-indigo">$("#notification").mdNotify("close")</p>
+        <p class="help-text">Closes a notification (and deletes it permanently).</p>
+        <pre><code class="language-javascript"><pre>$("#notification").mdNotify("close");</pre></code></pre>
     </div>
     <footer class="page-footer indigo">
         <div class="container">
@@ -346,7 +375,6 @@
             body: "body content",
             timeStamp: true,
             timeOut: 5000,
-            show: true,
             position: "top",
             dismiss: false,
             actions: [{ name: "ARCHIVE", mdIcon: "archive", link: "#" }, { name: "REPLY", mdIcon: "reply", link: "#" }],

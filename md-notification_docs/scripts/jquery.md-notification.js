@@ -115,7 +115,6 @@
                 imgUrl: null,
                 footer: null,
                 customTimeStamp: null,
-                show: false,
                 position: "top",
                 timeOut: 5000,
                 dismiss: false,
@@ -133,9 +132,7 @@
                     var html = GenereateNotificationHTML(settings);
                     item = $(html).appendTo("body");
                     //Animate element In
-                    if (settings.show) {
-                        ShowNotification(item);
-                    }
+                    ShowNotification(item);
                     //Animate ElementOut
                     CloseNotification(item, settings.timeOut);
                 });
