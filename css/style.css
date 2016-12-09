@@ -1,0 +1,55 @@
+.coolHeader{
+    background: #3F51B5;
+    color:#fff;
+    padding:24px 0;
+    margin-bottom: 24px;
+}
+.coolHeader h1{
+    font-weight: lighter;
+    font-size:4rem;
+    font-family: 'Roboto','Open Sans Hebrew','Open Sans','Raleway',Arial,sans-serif;
+    margin:0;
+}
+.repo{
+    background-color: #eee;
+    padding:12px;
+    border-radius: 2px;
+    min-height: 162px;
+    margin-bottom: 12px;
+}
+.repo h5{
+    margin-bottom: 5px;
+}
+.footer{
+  padding-top: 20px;
+  margin-top: 20px;
+  background-color: #3F51B5;
+  color:#fff;
+}
+.social-list{
+  list-style: none !important;
+  padding:0; 
+}
+.social-list li{
+    margin-bottom: 2px;
+}
+.social-text{
+  color:#fff;
+}
+.footer h5{
+  font-size: 25px;
+}
+.footer-copyright{
+  background:#3949AB;
+  color:#fff;
+  font-size:15px;
+  height:50px;
+  line-height: 50px;
+}
+.footer-copyright a{
+  color:#fff;
+}
+a{
+    text-decoration: none;
+    margin-bottom: 2px;
+}
