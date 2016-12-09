@@ -68,7 +68,6 @@ var ListComponent = (function () {
     }
     ListComponent.prototype.checkItem = function (todoitem) {
         todoitem.isComplete = !todoitem.isComplete;
-        console.log(new Date(todoitem.dateAdded).getTime());
         this.saveAction(false);
     };
     ListComponent.prototype.openModal = function () {
@@ -403,14 +402,10 @@ var TodolistService = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return environment; });
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `angular-cli.json`.
 var environment = {
-    production: false
+    production: true
 };
-//# sourceMappingURL=C:/Users/Bodok/Desktop/TodoApp/src/environment.js.map
+//# sourceMappingURL=C:/Users/Bodok/Desktop/TodoApp/src/environment.prod.js.map
 
 /***/ },
 
@@ -487,7 +482,7 @@ module.exports = "  <div class=\"container\">\n    <router-outlet></router-outle
 /***/ 635:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"cf flexbox form-wrapper\">\n    <div class=\"stretch\">\n        <input (keyup.enter)=\"addNewAction()\" [(ngModel)]=\"newItem\" type=\"text\" />\n    </div>\n    <div class=\"normal\">\n        <button (click)=\"addNewAction()\" type=\"button\"><i class=\"fa fa-plus\"></i></button>\n    </div>\n</div>\n<div class=\"list\" *ngIf=\"todolist\">\n    <div class=\"list-item\" *ngFor=\"let todoitem of todolist\">\n        <div (click)=\"checkItem(todoitem)\" [class.checked]=\"todoitem.isComplete\" class=\"item\">\n            <span class=\"content\">{{todoitem.content}}</span>\n            <span class=\"dateAdded\">{{todoitem.dateAdded | date: 'dd/MM/yyyy HH:mm:ss'}}</span>\n        </div>\n        <button (click)=\"editItem(todoitem)\" class=\"btnEdit\"><i class=\"fa fa-pencil\"></i></button>\n        <button (click)=\"deleteItem(todoitem)\" class=\"btnDelete\"><i class=\"fa fa-trash\"></i></button>\n    </div>\n</div>\n<modal #editModal>\n    <modal-header>\n        <h4 class=\"modal-title\">I'm a modal!</h4>\n    </modal-header>\n    <modal-body>\n        <div *ngIf=\"selectedItem\" class=\"form-group\">\n            <label class=\"control-label\">Todo Task</label>\n            <input type=\"text\" class=\"form-control\" [(ngModel)]=\"selectedItem.content\" />\n        </div>\n    </modal-body>\n    <modal-footer>\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"revertAndClose()\">Cancel</button>\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"saveAndClose()\">Ok</button>\n    </modal-footer>\n</modal>"
+module.exports = "<button [class.edActive]=\"editMode\" (click)=\"editMode = !editMode\" class=\"btn btn-primary btn-lg btn-block visible-xs\">EDIT MODE &nbsp;<i class=\"fa fa-pencil\"></i></button>\n<div class=\"cf flexbox form-wrapper\">\n    <div class=\"stretch\">\n        <input (keyup.enter)=\"addNewAction()\" [(ngModel)]=\"newItem\" type=\"text\" />\n    </div>\n    <div class=\"normal\">\n        <button (click)=\"addNewAction()\" type=\"button\"><i class=\"fa fa-plus\"></i></button>\n    </div>\n</div>\n<div class=\"list\" *ngIf=\"todolist\">\n    <div [class.mobHov]=\"editMode\" class=\"list-item\" *ngFor=\"let todoitem of todolist\">\n        <div (click)=\"checkItem(todoitem)\" [class.checked]=\"todoitem.isComplete\" class=\"item\">\n            <span class=\"content\">{{todoitem.content}}</span>\n            <span class=\"dateAdded\">{{todoitem.dateAdded | date: 'dd/MM HH:mm'}}</span>\n        </div>\n        <button (click)=\"editItem(todoitem)\" class=\"btnEdit\"><i class=\"fa fa-pencil\"></i></button>\n        <button (click)=\"deleteItem(todoitem)\" class=\"btnDelete\"><i class=\"fa fa-trash\"></i></button>\n    </div>\n</div>\n<modal #editModal>\n    <modal-header>\n        <h4 class=\"modal-title\">I'm a modal!</h4>\n    </modal-header>\n    <modal-body>\n        <div *ngIf=\"selectedItem\" class=\"form-group\">\n            <label class=\"control-label\">Todo Task</label>\n            <input type=\"text\" class=\"form-control\" [(ngModel)]=\"selectedItem.content\" />\n        </div>\n    </modal-body>\n    <modal-footer>\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"revertAndClose()\">Cancel</button>\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"saveAndClose()\">Ok</button>\n    </modal-footer>\n</modal>"
 
 /***/ },
 
